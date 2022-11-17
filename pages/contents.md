@@ -1,0 +1,56 @@
+- ## Introduzione
+	- Ciò che stai vedendo si prefigge di essere:
+		- Un'enciclopedia simil-Wikipedia per informazione soggetta a censura
+		- Un indice/database di materiale come libri, documenti e video, anch'essi soggetti a censura
+	- ### Tecnologie impiegate
+		- **Logseq** (le pagine che stai navigando in questo momento)
+			- Logseq è un applicativo di *Knowledge Management* con le seguenti caratteristiche:
+				- modifica file locali di testo semplice in formato *Markdown*; ciò permette di utilizzare i più svariati strumenti di elaborazione testo, inclusi quelli *Unix*, per manipolarne programmaticamente i contenuti
+				- è un *outliner*, ossia organizza i contenuti in blocchi di testo indentati per creare una gerarchia
+					- i blocchi si possono contrarre ed espandere per nascondere o mostrarne i sotto-blocchi utilizzando la freccia che compare passando il cursore a sinistra di un blocco
+						- inoltre cliccando sul *bullet-point* stesso a sinistra di ogni blocco è possibile restringere la visualizzazione a quel blocco e ai suoi sottoblocchi, utile per navigare pagine estremamente lunghe
+					- maggiori dettagli sulle sue funzioni ~~sono~~ saranno disponibili nella pagina 👉🏻 [[Logseq]].
+				- utilizza *ClojureScript*, ossia è scritto in *Clojure* e compila in codice *JavaScript* eseguibile nel browser: l'intero Logseq infatti può essere eseguito interamente nel browser, oltre che come applicazione desktop/mobile
+					- Clojure è un linguaggio di programmazione funzionale che normalmente compila bytecode per la *Java Virtual Machine*, è infatti utilizzato per sfruttare il paradigma della programmazione funzionale in ambiente Java, che invece è orientato agli oggetti
+				- il database utilizzato da Logseq è un *graph database*, una tipologia alternativa ai più classici *database relazionali (RDB)*; ciò permette di avere queries estremamente performanti senza una struttura rigida come negli RDB
+				  collapsed:: true
+					- Logseq in particolare utilizza *DataScript*, un database che gira interamente nel browser così come l'intero Logseq; DataScript è un'implementazione per ClojureScript di *Datalog*, un linguaggio di query più espressivo rispetto a *SQL* e Logseq pemette di scrivere queries direttamente in Datalog, quindi interrogare il database di Logseq direttamente dai blocchi di testo.
+					- I graph database sono utilizzati ad esempio negli algoritmi di raccomandazione nei social network e in generale nel *Machine Learning*, così come Datalog al posto di SQL.
+					-
+					-
+				- può utilizzare *Git* per il versioning dei file (con auto-commits ogni tot); ciò permette di sfruttare servizi come GitHub per gestirne in modo collaborativo i contenuti
+				- oltre ai blocchi utilizza le *pagine* come raccolte di blocchi; le pagine funzionano anche da *tag/etichette*: creando un riferimento (reference) ad una pagina con la sintassi `[[wikilink]]` (come su Wikipedia) o con `#hashtag` si va a creare un collegamento; Per l'intero grafo o per una singola pagina, Logseq permette di visualizzare una rappresentazione grafica in cui le pagine fanno da *nodi* e i riferimenti da *collegamenti*
+					- il grafo complessivo è visualizzabile dalla sidebar a sinistra mentre quello della pagina corrente dalla sidebar a destra
+					- a fondo di ogni pagina è possibile vedere i *Linked References* (riferimenti espliciti con le sintassi sopracitate) e le *Unlinked References* (riferimenti dedotti senza l'utilizzo di una sintassi esplicita)
+				- permette tramite un'apposita sintassi di creare un vero e proprio RDB interrogabile con le queries: è possibile quindi indicare ad esempio che una risorsa è un *libro* con un certo *autore* e successivamente interrogare l'RDB per ottenere ad esempio *tutti i libri di un certo autore*
+		- **IPFS**
+			- L'*Inter-Planetary File System* è un sistema per condividere file simile ai *Torrent*, ma mentre con i Torrent è necessario avere una sorta di indice creato arbitrariamente insieme ad ogni Torrent, con IPFS i file sono indicizzati con il loro stesso *hash* (codice univoco per ciascun file ricavabile univocamente da chiunque avendo a disposizione il file e l'algoritmo di hashing impiegato)
+			- Quindi IPFS è simile alla rete Torrent, ossia i file sono archiviati nei dischi degli utenti e sono disponibili ad altri solo fintanto che c'è almeno un nodo che mette a disposizione i file richiesti; la differenza con Torrent è che i file sono automaticamente deduplicati
+				- Ad esempio, se Alice condivide su IPFS un certo file, poi successivamente la sua macchina va offline e nessun altro lo ha copiato nel frattempo, quel file non è più disponibile; ma se Bob è entrato in possesso di quello stesso file in altri modi e lo condivide su IPFS, esso torna disponibile allo stesso indirizzo utilizzato da Alice; ciò rende IPFS una rete estremamente resiliente: può venire frammentata innumerevoli volte per esempio per problemi di connessione, ma una volta che i nodi tornano online si "riallacciano" automaticamente, come i microorganismi di una colonia che vengano momentaneamente separati e poi riuniti
+			- IPFS è ottimo per condividere file di ogni dimensione con una rete Peer-to-peer resistente a classici metodi di censura come chiusura di account o di siti
+			- IPFS è accessibile o con client dedicati o attraverso browser che abbiano un'estensione installata; in questa modalità IPFS bypassa il sistema DNS, che essendo centralizzato è facile bersaglio di censura
+			- Inoltre per rendere più agevole l'accesso esistono dei proxy IPFS-HTTP, il più famoso dei quali si trova all'indirizzo ipfs.io: ossia si torna ad utilizzare il DNS ma se per caso ipfs.io o altri proxy venissero bloccati, si potrebbe continuare ad usare i client IPFS appositi o browser con l'apposita estensione
+		- In questo progetto si utilizzerà Logseq per creare un indice/enciclopedia navigabile mentre si utilizzerà IPFS per condividere i file: si utilizzeranno dei link al dominio ipfs.io per facilitare lo scaricamento, ma come detto in caso di blocco dei proxy si potranno utilizzare quei link comunque, perché non sono altro che l'hash univoco di quei file
+- ## Contenuti
+	- Al momento sono state create le seguenti aree in lingua italiana:
+		- [[Economia]]
+	- e in lingua inglese (con collegamenti tra le risorse quando fossero disponibili in più lingue):
+		- [[Economics]]
+	- Si cercherà di mantenere i *records* del RDB (ossia blocchi di testo con particolari *proprietà*) in pagine molto grandi come appunto [[Economia]], ma tenendo ciascun blocco "leggero"
+	- Se una risorsa ha altro materiale associato esso sarà aggiunto ad una pagina ad-hoc, come per il libro [[Il mito del deficit]] ed eventualmente quei blocchi saranno *incorporati* altrove, dove avesse senso per un'agevole consultazione
+	- Nelle varie pagine che fanno da categoria/raccolta saranno inserite le queries per i relativi contenuti, per esempio tutti i libri nella pagina [[Libri]]
+	- Questa è come appare una query in forma di tabella:
+	  query-table:: true
+	  query-properties:: [:cover :block :author :year :language :link :area :alternative-languages]
+	  {{query (or (property class Libri) (property class Books))}}
+- ### Da fare
+	- TODO Spiegare per bene la funzionalità di annotazione dei PDF
+	- ![Il più grande crimine](https://www.paolobarnard.info/docs/ilpiugrandecrimine2011.pdf) (questo è un PDF remoto, il link punta direttamente al sito di Paolo Barnard)
+	- È possibile annotare dei PDF, anche remoti (e in questo progetto lo saranno tutti)
+	- facendo riferimento ad una porzione di testo:
+		- ((6375f23d-1c02-4811-b7c1-1afabd064aad))
+	- oppure un'area rettangolare (per le immagini o per porzioni di testo non selezionabili):
+		- ((6375f2cd-2e84-4406-85fa-279e5a5bb18a))
+			- Cliccando sul riferimento si apre il PDF alla relativa pagina (il caricamento è lento se il PDF è una risorsa remota, occorrerà trovare il modo di avere una qualche cache locale eventualmente)
+			- e si possono aggiungere delle note come questi sottoblocchi
+	- TODO Spiegare come funzionano i task (TODO etc)
