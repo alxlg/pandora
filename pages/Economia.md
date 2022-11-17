@@ -13,6 +13,7 @@ Alternative-Languages:: [🇬🇧 English (Economics)](Economics)
 		  Year:: [[2020]]
 		  Alternative-Languages:: [🇬🇧 English (The Deficit Myth)](The Deficit Myth)
 		  Link:: [Fazi Editore](https://fazieditore.it/catalogo-libri/il-mito-del-deficit/), [IPFS (.epub)](https://ipfs.io/ipfs/bafykbzacebtoiwwh4jbihyk2ma5v34bvw5s7vd5cs4jmrz3re7s5tghiaedmk?filename=stephanie-kelton-il-mito-del-deficit-la-teoria.epub)
+		  IPFS:: [.epub](https://ipfs.io/ipfs/bafykbzacebtoiwwh4jbihyk2ma5v34bvw5s7vd5cs4jmrz3re7s5tghiaedmk?filename=stephanie-kelton-il-mito-del-deficit-la-teoria.epub)
 		  Cover:: ![](https://fazieditore.it/wp-content/uploads/2020/11/il-mito-del-deficit-691x1024.jpg){:height 140, :width 90}
 		  collapsed:: true
 		  La teoria monetaria moderna per un’economia al servizio del popolo

@@ -34,6 +34,12 @@
 - ## Contenuti
 	- Al momento sono state create le seguenti aree in lingua italiana:
 		- [[Economia]]
+		- [[Cratesiologia]] - Studio del potere, della propaganda e della manipolazione delle masse
+		- [[Storia]]
+		- [[Geopolitica]]
+		- Temi
+			- [[Covid-19]]
+			-
 	- e in lingua inglese (con collegamenti tra le risorse quando fossero disponibili in più lingue):
 		- [[Economics]]
 	- Si cercherà di mantenere i *records* del RDB (ossia blocchi di testo con particolari *proprietà*) in pagine molto grandi come appunto [[Economia]], ma tenendo ciascun blocco "leggero"
