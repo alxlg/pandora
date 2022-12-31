@@ -1,7 +1,4 @@
 - ## Introduzione
-	- Ciò che stai vedendo si prefigge di essere:
-		- Un'enciclopedia simil-Wikipedia per informazione soggetta a censura
-		- Un indice/database di materiale come libri, documenti e video, anch'essi soggetti a censura
 	- ### Tecnologie impiegate
 		- **Logseq** (le pagine che stai navigando in questo momento)
 			- Logseq è un applicativo di *Knowledge Management* con le seguenti caratteristiche:
